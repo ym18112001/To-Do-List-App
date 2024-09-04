@@ -1,0 +1,10 @@
+<div class="container">
+  <br />
+  <app-todoform (handleSendData)="handleReceiveData($event)"></app-todoform>
+  <br />
+  <app-todolist
+    [todolist]="todolist"
+    (handleSentData)="handleReceivedData($event)"
+  ></app-todolist>
+  <br />
+</div>

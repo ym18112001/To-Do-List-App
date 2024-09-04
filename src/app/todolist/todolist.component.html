@@ -1,0 +1,44 @@
+<div class="bg-body-secondary">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">To-Do List</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (item of todolist; track $index) {
+      <th class="d-flex justify-content-between" scope="row">
+        {{ $index + 1
+        }}<i
+          type="button"
+          (click)="this.iscompleted($index)"
+          class="fa-solid fa-check btn bg-transparent btn-outline-secondary"
+        ></i>
+      </th>
+      <tr>
+        <td class="d-flex justify-content-between">
+          <span
+            [ngClass]="
+              todolist[$index].iscompleted
+                ? 'text-decoration-line-through'
+                : 'text-decoration-none'
+            "
+            >{{ item.title }}</span
+          >
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="removeTodo($index)"
+          >
+            Delete TO-DO
+          </button>
+        </td>
+      </tr>
+
+      } @empty {
+      <p>no todos found</p>
+      }
+    </tbody>
+  </table>
+</div>

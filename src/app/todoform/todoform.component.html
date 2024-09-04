@@ -1,0 +1,28 @@
+<form class="bg-body-tertiary">
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <label for="todo-input" class="h1 col-sm-2 col-form-label-lg"
+        >To-Do</label
+      >
+      <br />
+      <input
+        #todoinput
+        type="text"
+        class="form-control"
+        placeholder="Enter Your To-Do Task Here"
+      />
+      <br />
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="addTodo(todoinput)"
+      >
+        Add Task
+      </button>
+    </div>
+  </div>
+  <br />
+  <div class="form-group row">
+    <div class="col-sm-10"></div>
+  </div>
+</form>
